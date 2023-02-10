@@ -9,6 +9,22 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <>
-    <TaskCard/>
+    <TaskCard />
+    <Button text="saludar" />
+
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        alert("enviado");
+      }}
+    >
+      <h1>Registro de usuario</h1>
+      <button>Send</button>
+    </form>
+    <input
+      onChange={(e) => {
+        console.log(e.target.value);
+      }}
+    ></input>
   </>
 );
