@@ -1,10 +1,10 @@
-import './task.css'
+import "./task.css";
 
-export function TaskCard() {
+export function TaskCard(ready) {
   return (
-    <div className='card'>
+    <div className="card">
       <h1>Mi primer tarea</h1>
-      <p>Tarea realizada</p>
+      <span>{ready === true ? "Tarea realizada" : "Tarea pendiente"}</span>
     </div>
   );
 }
