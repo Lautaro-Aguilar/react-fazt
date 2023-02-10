@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
 import { Greeting, UserCard } from "./Greeting";
 import Product, { NavBar } from "./Product";
@@ -8,28 +8,37 @@ import { Posts } from "./Posts";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const users = [
-  {
-    id: 1,
-    name: "Ryan Ray",
-    image: "https://robohash.org/user1",
-  },
-  {
-    id: 2,
-    name: "Joe",
-    image: "https://robohash.org/user2",
-  },
-];
+function Counter() {
+  const [counter, setCounter] = useState(10);
+
+  return (
+    <div>
+      <h1>Counter: {counter}</h1>
+      <button
+        onClick={() => {
+          setCounter(counter + 1);
+        }}
+      >
+        Sumar
+      </button>
+      <button
+        onClick={() => {
+          setCounter(counter - 1);
+        }}
+      >
+        Restar
+      </button>
+      <button onClick={() => {
+        setCounter(1000)
+      }}>
+        Reiniciar
+      </button>
+    </div>
+  );
+}
 
 root.render(
   <>
-    {users.map((user, i) => {
-      return (
-        <div key={i}>
-          <h1>{user.name}</h1>
-          <img src={user.image} />
-        </div>
-      );
-    })}
+    <Counter />
   </>
 );
