@@ -1,5 +1,9 @@
-function App() {
-  return <h1>Hola Mundo</h1>;
+import React from 'react'
+
+function holamundo() {
+  return (
+    <div>holamundo</div>
+  )
 }
 
-export default App
+export default holamundo
